@@ -1,15 +1,37 @@
 <template>
-  <div>1212</div>
+  <div>
+    <el-color-picker v-model="color"></el-color-picker>
+    <el-button type="primary" >主要按钮</el-button>
+    <span class="span">span</span>
+    <div class="div"></div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, watch } from "vue";
 
 export default defineComponent({
-  setup() {
-    return {};
+  setup(){
+    const color= ref('#409EFF');
+
+    watch(color, (val): void=> {
+      console.log("state.color :>> ", val);
+      document.getElementsByTagName('body')[0].style.setProperty('--label-font-color', val )
+    });
+    return {
+      color
+    };
   },
 });
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.span{
+  color: $labelFontColor;
+}
+.div{
+  width: 100px;
+  height: 100px;
+  background:$labelFontColor ;
+}
+</style>

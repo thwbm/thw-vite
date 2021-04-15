@@ -1,3 +1,5 @@
+import lang from 'element-plus/lib/locale/lang/zh-cn'
+import 'dayjs/locale/zh-cn'
 import {
   ElAlert,
   ElAside,
@@ -82,6 +84,7 @@ import {
   ElMessage,
   ElMessageBox,
   ElNotification,
+  locale,
 } from "element-plus";
 
 const components = [
@@ -175,7 +178,9 @@ const plugins = [
 
 const option = { size: "small", zIndex: 3000 };
 
+
 export const useElementPlus = (app: any) => {
+  locale(lang)
   // element全局配置
   app.config.globalProperties.$ELEMENT = option;
   // 组件注册
