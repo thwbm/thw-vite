@@ -4,11 +4,13 @@
     <el-button type="primary" >主要按钮</el-button>
     <span class="span">span</span>
     <div class="div"></div>
+    <theme />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
+import theme from './common/theme-picker.vue'
 
 export default defineComponent({
   setup(){
@@ -22,6 +24,7 @@ export default defineComponent({
       color
     };
   },
+  components:{theme}
 });
 </script>
 
