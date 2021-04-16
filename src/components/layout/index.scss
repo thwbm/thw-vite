@@ -1,0 +1,13 @@
+#layout {
+  width: 100%;
+  .el-aside {
+    max-width: 260px !important;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .el-container {
+    overflow-x: hidden;
+  }
+}

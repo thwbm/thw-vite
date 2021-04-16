@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import styleImport from "vite-plugin-style-import";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,6 +31,12 @@ export default defineConfig({
       scss: {
         additionalData: `@import "./src/style/all.scss";`,
       },
+    },
+  },
+  resolve: {
+    // 目录别名
+    alias: {
+      "@": resolve(__dirname, "src"),
     },
   },
   server: {
