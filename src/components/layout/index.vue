@@ -1,21 +1,23 @@
 <template>
   <el-container id="layout">
-    <div style="width: 260px">
-      <el-aside>Aside</el-aside>
-    </div>
+    <el-aside>
+      <menuComponent />
+    </el-aside>
     <el-container>
-      <div>
-        <el-header>Header</el-header>
-      </div>
-      <el-main>Main</el-main>
+      <el-header> header </el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import menuComponent from "./module/menuComponent.vue";
 
 export default defineComponent({
+  components: { menuComponent },
   setup(): {} {
     return {};
   },
@@ -23,5 +25,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scope>
-@import "index.scss";
+@import "module/index.scss";
 </style>

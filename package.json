@@ -9,11 +9,14 @@
   "dependencies": {
     "axios": "^0.21.1",
     "element-plus": "^1.0.2-beta.36",
+    "file-saver": "^2.0.5",
     "vue": "^3.0.5",
     "vue-router": "^4.0.5",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.2",
+    "@types/node": "^14.14.41",
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
     "sass": "^1.32.8",
