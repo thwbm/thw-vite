@@ -1,5 +1,5 @@
 <template>
-  <template v-for="item in routes">
+  <template v-for="item in routes" :key="item.path">
     <el-submenu v-if="item.children" :index="item.name">
       <template #title>
         <i :class="item.meta.icon"></i>
@@ -17,15 +17,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "menuItem",
+  name: 'menuItem',
   props: {
     routes: { type: Array },
   },
-  setup(): {} {
-    return {};
+  setup(props): {} {
+    console.log('routes :>> ', props.routes)
+    return {}
   },
-});
+})
 </script>
