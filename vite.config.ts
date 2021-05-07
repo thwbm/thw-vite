@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import styleImport from "vite-plugin-style-import";
-import { resolve } from "path";
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import styleImport from 'vite-plugin-style-import'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,15 +10,15 @@ export default defineConfig({
     styleImport({
       libs: [
         {
-          libraryName: "element-plus",
+          libraryName: 'element-plus',
           esModule: true,
           ensureStyleFile: true,
-          resolveStyle: (name) => {
-            name = name.slice(3);
-            return `element-plus/packages/theme-chalk/src/${name}.scss`;
+          resolveStyle: name => {
+            name = name.slice(3)
+            return `element-plus/packages/theme-chalk/src/${name}.scss`
           },
-          resolveComponent: (name) => {
-            return `element-plus/lib/${name}`;
+          resolveComponent: name => {
+            return `element-plus/lib/${name}`
           },
         },
       ],
@@ -36,7 +36,7 @@ export default defineConfig({
   resolve: {
     // 目录别名
     alias: {
-      "@": resolve(__dirname, "src"),
+      '@': resolve(__dirname, 'src'),
     },
   },
   server: {
@@ -44,11 +44,11 @@ export default defineConfig({
     port: 8091,
     // 代理
     proxy: {
-      "/api": {
-        target: "http://jsonplaceholder.typicode.com",
+      '/api': {
+        target: 'http://jsonplaceholder.typicode.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: path => path.replace(/^\/api/, ''),
       },
     },
   },
-});
+})

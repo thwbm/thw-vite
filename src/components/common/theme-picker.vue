@@ -1,12 +1,8 @@
 <template>
-  <el-color-picker
-    v-model="theme"
-    class="theme-picker"
-    popper-class="theme-picker-dropdown"
-  />
+  <el-color-picker v-model="theme" class="theme-picker" popper-class="theme-picker-dropdown" />
 </template>
 <script>
-import Element from "element-plus"
+import Element from 'element-plus'
 const { version } = Element
 const ORIGINAL_THEME = '#409EFF'
 export default {
@@ -38,7 +34,7 @@ export default {
       const chalkHandler = getHandler('chalk', 'chalk-style')
       const docsHandler = getHandler('docs', 'docs-style')
       if (!this.chalk) {
-        const url = `https://unpkg.com/element-plus@${ version }/lib/theme-chalk/index.css`
+        const url = `https://unpkg.com/element-plus@${version}/lib/theme-chalk/index.css`
         this.getCSSString(url, chalkHandler, 'chalk')
       } else {
         chalkHandler()
@@ -51,11 +47,10 @@ export default {
       } else {
         docsHandler()
       }
-      const styles = [].slice.call(document.querySelectorAll('style'))
-        .filter(style => {
-          const text = style.innerText
-          return new RegExp(oldVal, 'i').test(text) && !/Chalk Variables/.test(text)
-        })
+      const styles = [].slice.call(document.querySelectorAll('style')).filter(style => {
+        const text = style.innerText
+        return new RegExp(oldVal, 'i').test(text) && !/Chalk Variables/.test(text)
+      })
       styles.forEach(style => {
         const { innerText } = style
         if (typeof innerText !== 'string') return
@@ -87,7 +82,8 @@ export default {
         let red = parseInt(color.slice(0, 2), 16)
         let green = parseInt(color.slice(2, 4), 16)
         let blue = parseInt(color.slice(4, 6), 16)
-        if (tint === 0) { // when primary color is in its rgb space
+        if (tint === 0) {
+          // when primary color is in its rgb space
           return [red, green, blue].join(',')
         } else {
           red += Math.round(tint * (255 - red))
@@ -96,7 +92,7 @@ export default {
           red = red.toString(16)
           green = green.toString(16)
           blue = blue.toString(16)
-          return `#${ red }${ green }${ blue }`
+          return `#${red}${green}${blue}`
         }
       }
       const shadeColor = (color, shade) => {
@@ -109,7 +105,7 @@ export default {
         red = red.toString(16)
         green = green.toString(16)
         blue = blue.toString(16)
-        return `#${ red }${ green }${ blue }`
+        return `#${red}${green}${blue}`
       }
       const clusters = [theme]
       for (let i = 0; i <= 9; i++) {
@@ -122,15 +118,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .theme-picker {
-    height: 80px;
-    display: inline-block;
-    // @utils-vertical-center;
-  }
-  .theme-picker .el-color-picker__trigger {
-    vertical-align: middle;
-  }
-  .theme-picker-dropdown .el-color-dropdown__link-btn {
-    display: none;
-  }
+.theme-picker {
+  height: 80px;
+  display: inline-block;
+  // @utils-vertical-center;
+}
+.theme-picker .el-color-picker__trigger {
+  vertical-align: middle;
+}
+.theme-picker-dropdown .el-color-dropdown__link-btn {
+  display: none;
+}
 </style>

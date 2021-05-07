@@ -1,4 +1,4 @@
-import FileSaver from "file-saver";
+import FileSaver from 'file-saver'
 export default class fileSave {
   /**
    * 导出Excel文件
@@ -7,9 +7,9 @@ export default class fileSave {
    */
   static getExcel(res: BlobPart, name: string) {
     let blob = new Blob([res], {
-      type: "application/vnd.ms-excel",
-    });
-    FileSaver.saveAs(blob, name + ".xlsx");
+      type: 'application/vnd.ms-excel',
+    })
+    FileSaver.saveAs(blob, name + '.xlsx')
   }
 
   /**
@@ -19,9 +19,9 @@ export default class fileSave {
    */
   static getCsv(res: BlobPart, name: string) {
     let blob = new Blob([res], {
-      type: "application/vnd.ms-excel",
-    });
-    FileSaver.saveAs(blob, name + ".csv");
+      type: 'application/vnd.ms-excel',
+    })
+    FileSaver.saveAs(blob, name + '.csv')
   }
 
   /**
@@ -30,8 +30,8 @@ export default class fileSave {
    * @param {*} name  文件名
    */
   static getImgURLs(url: string, name: any) {
-    let last = url.substring(url.lastIndexOf("."), url.length);
-    FileSaver.saveAs(url, `${name}${last}`);
+    let last = url.substring(url.lastIndexOf('.'), url.length)
+    FileSaver.saveAs(url, `${name}${last}`)
   }
   /**
    * 导出图片2
@@ -40,8 +40,8 @@ export default class fileSave {
    */
   static downLoadImg(res: BlobPart, filename: any) {
     let blob = new Blob([res], {
-      type: "image/jpeg",
-    });
-    FileSaver.saveAs(blob, `${filename}.jpg`);
+      type: 'image/jpeg',
+    })
+    FileSaver.saveAs(blob, `${filename}.jpg`)
   }
 }

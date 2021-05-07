@@ -9,25 +9,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
-import theme from "../common/theme-picker.vue";
+import { defineComponent, ref, watch } from 'vue'
+import theme from '../common/theme-picker.vue'
 
 export default defineComponent({
   setup() {
-    const color = ref("#409EFF");
+    const color = ref('#409EFF')
 
     watch(color, (val): void => {
-      console.log("state.color :>> ", val);
-      document
-        .getElementsByTagName("body")[0]
-        .style.setProperty("--label-font-color", val);
-    });
+      console.log('state.color :>> ', val)
+      document.getElementsByTagName('body')[0].style.setProperty('--label-font-color', val)
+    })
     return {
       color,
-    };
+    }
   },
   components: { theme },
-});
+})
 </script>
 
 <style lang="scss">

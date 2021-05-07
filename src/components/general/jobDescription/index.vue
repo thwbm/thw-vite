@@ -7,21 +7,21 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, watch, computed } from "vue";
+import { ref, defineComponent, watch, computed } from 'vue'
 export default defineComponent({
-  name: "HelloWorld",
+  name: 'HelloWorld',
   setup() {
-    const count = ref(0);
+    const count = ref(0)
 
     watch(count, function (val): void {
-      console.log("state.count :>> ", count);
-    });
+      console.log('state.count :>> ', count)
+    })
     const a = computed(() => {
-      return count.value * 3;
-    });
-    return { count, a };
+      return count.value * 3
+    })
+    return { count, a }
   },
-});
+})
 </script>
 
 <style lang="scss">

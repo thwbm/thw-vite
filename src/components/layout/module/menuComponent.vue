@@ -1,11 +1,5 @@
 <template>
-  <el-menu
-    :default-active="routeName"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    unique-opened
-    router
-  >
+  <el-menu :default-active="routeName" class="el-menu-vertical-demo" :collapse="isCollapse" unique-opened router>
     <menuItem :routes="routes" />
   </el-menu>
 </template>
@@ -26,12 +20,6 @@ export default defineComponent({
     // 菜单展开收起，默认展开
     const isCollapse = false
 
-    console.log(
-      'routes, routeName, isCollapse :>> ',
-      routes,
-      routeName,
-      isCollapse
-    )
     return { routes, routeName, isCollapse }
   },
 })

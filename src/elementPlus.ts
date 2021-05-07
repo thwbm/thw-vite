@@ -1,5 +1,3 @@
-import lang from 'element-plus/lib/locale/lang/zh-cn'
-import 'dayjs/locale/zh-cn'
 import {
   ElAlert,
   ElAside,
@@ -84,8 +82,7 @@ import {
   ElMessage,
   ElMessageBox,
   ElNotification,
-  locale,
-} from "element-plus";
+} from 'element-plus'
 
 const components = [
   ElAlert,
@@ -166,29 +163,23 @@ const components = [
   ElTransfer,
   ElTree,
   ElUpload,
-];
+]
 
-const plugins = [
-  ElInfiniteScroll,
-  ElLoading,
-  ElMessage,
-  ElMessageBox,
-  ElNotification,
-];
+const plugins = [ElInfiniteScroll, ElLoading, ElMessage, ElMessageBox, ElNotification]
 
-const option = { size: "small", zIndex: 3000 };
-
+const option = { size: 'small', zIndex: 3000 }
 
 export const useElementPlus = (app: any) => {
-  locale(lang)
   // element全局配置
-  app.config.globalProperties.$ELEMENT = option;
+  app.config.globalProperties.$ELEMENT = option
+
   // 组件注册
-  components.forEach((component) => {
-    app.component(component.name, component);
-  });
+  components.forEach(component => {
+    app.component(component.name, component)
+  })
+
   // 插件注册
-  plugins.forEach((plugin) => {
-    app.use(plugin);
-  });
-};
+  plugins.forEach(plugin => {
+    app.use(plugin)
+  })
+}

@@ -13,17 +13,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import menuComponent from "./module/menuComponent.vue";
+import { defineComponent } from 'vue'
+import menuComponent from './module/menuComponent.vue'
+import dayjs from 'dayjs'
+import { xor } from 'lodash-es'
 
 export default defineComponent({
   components: { menuComponent },
   setup(): {} {
-    return {};
+    // console.log('dayjs :>> ', dayjs().format(), 1, xor([1, 2], [2, 3]))
+    return {}
   },
-});
+  // mounted() {
+  //   console.log('object :>> ', this.$i18n.locale)
+  //   this.$i18n.locale = 'en'
+  //   console.log('object :>> ', this.$i18n.locale)
+  // },
+})
 </script>
 
 <style lang="scss" scope>
-@import "module/index.scss";
+@import 'module/index.scss';
 </style>
+
+function _xor(arg0: number[], arg1: number[]): any {
+  throw new Error('Function not implemented.')
+}
+
+function _xor(arg0: number[], arg1: number[]): any {
+  throw new Error('Function not implemented.')
+}

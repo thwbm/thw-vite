@@ -14,8 +14,7 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: 'jobDescription',
         name: 'jobDescription',
-        component: () =>
-          import('@/components/general/jobDescription/index.vue'),
+        component: () => import('@/components/general/jobDescription/index.vue'),
         meta: {
           title: '工作概况',
         },
@@ -30,22 +29,22 @@ export const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
-  {
-    path: '/home',
-    name: 'Home',
-    component: () => import('@/components/test/HelloWorld.vue'),
-    meta: {
-      title: '数据概况',
-    },
-  },
-  {
-    path: '/HelloWorld',
-    name: 'HelloWorld',
-    component: () => import('@/components/test/home.vue'),
-    meta: {
-      title: '数据概况',
-    },
-  },
+  // {
+  //   path: '/home',
+  //   name: 'Home',
+  //   component: () => import('@/components/test/HelloWorld.vue'),
+  //   meta: {
+  //     title: '数据概况',
+  //   },
+  // },
+  // {
+  //   path: '/HelloWorld',
+  //   name: 'HelloWorld',
+  //   component: () => import('@/components/test/home.vue'),
+  //   meta: {
+  //     title: '数据概况',
+  //   },
+  // },
 ]
 
 const router = createRouter({

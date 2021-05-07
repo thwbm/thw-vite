@@ -25,7 +25,6 @@ export default defineComponent({
     routes: { type: Array },
   },
   setup(props): {} {
-    console.log('routes :>> ', props.routes)
     return {}
   },
 })
