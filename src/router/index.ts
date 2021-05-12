@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { t } from '@/i18n'
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -8,7 +9,7 @@ export const routes: Array<RouteRecordRaw> = [
     redirect: { name: 'jobDescription' },
     component: () => import('@/components/layout/index.vue'),
     meta: {
-      title: '概况总览',
+      title: t('aside.hello'),
     },
     children: [
       {
@@ -41,7 +42,8 @@ export const routes: Array<RouteRecordRaw> = [
   //   path: '/HelloWorld',
   //   name: 'HelloWorld',
   //   component: () => import('@/components/test/home.vue'),
-  //   meta: {
+  //   meta: {import default from './../i18n/zh-cn';
+
   //     title: '数据概况',
   //   },
   // },

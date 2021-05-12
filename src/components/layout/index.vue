@@ -24,11 +24,10 @@ export default defineComponent({
     // console.log('dayjs :>> ', dayjs().format(), 1, xor([1, 2], [2, 3]))
     return {}
   },
-  // mounted() {
-  //   console.log('object :>> ', this.$i18n.locale)
-  //   this.$i18n.locale = 'en'
-  //   console.log('object :>> ', this.$i18n.locale)
-  // },
+  mounted() {
+    this.$i18n.locale = 'zh-cn'
+    console.log('object :>> ', this.$i18n.locale, this.$t('aside.hello'))
+  },
 })
 </script>
 

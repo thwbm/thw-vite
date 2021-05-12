@@ -11,9 +11,10 @@ import ElementPlus from 'element-plus'
 import './style/element-variables.scss'
 import './style/body.scss'
 
-import i18n from '@/i18n'
+import { i18n, t } from '@/i18n'
 
 const app = createApp(App)
+app.config.globalProperties.$t = t // 全局配置 this.$
 // useElementPlus(app)
 app.use(ElementPlus, { size: 'small', zIndex: 3000, i18n: i18n.global.t })
 app.use(i18n)
