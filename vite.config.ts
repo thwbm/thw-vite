@@ -2,9 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import styleImport from 'vite-plugin-style-import'
 import { resolve } from 'path'
-const scssVariables = require('./src/style/all.scss.js')
+import scssVariables from './src//style/all'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({}),

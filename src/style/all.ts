@@ -3,4 +3,4 @@ const variables = {
   labelFontColor: 'var(--label-font-color, red)',
 }
 
-module.exports = variables
+export default variables

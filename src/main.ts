@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 // element-plus 按需加载
 // import { useElementPlus } from './elementPlus'
@@ -20,4 +21,5 @@ app.config.globalProperties.$t = t // 全局配置 this.$
 app.use(ElementPlus, { size: 'small', zIndex: 3000, i18n: i18n.global.t })
 app.use(i18n)
 app.use(router)
+app.use(store)
 app.mount('#app')
