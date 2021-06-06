@@ -7,9 +7,7 @@ import router from './router'
 
 // 全局引入
 import ElementPlus from 'element-plus'
-
 import './style/element-variables.scss'
-import './style/body.scss'
 
 import { i18n, t } from '@/i18n'
 

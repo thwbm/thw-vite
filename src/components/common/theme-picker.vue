@@ -15,6 +15,14 @@ export default {
   },
   watch: {
     theme(val, oldVal) {
+      this.updateInte(val, oldVal)
+    },
+  },
+  mounted() {
+    // this.updateInte(this.theme, this.theme)
+  },
+  methods: {
+    updateInte(val, oldVal) {
       if (typeof val !== 'string') return
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))
@@ -57,8 +65,6 @@ export default {
         style.innerText = this.updateStyle(innerText, originalCluster, themeCluster)
       })
     },
-  },
-  methods: {
     updateStyle(style, oldCluster, newCluster) {
       let newStyle = style
       oldCluster.forEach((color, index) => {
