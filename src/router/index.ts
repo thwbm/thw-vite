@@ -9,7 +9,7 @@ export const routes: Array<RouteRecordRaw> = [
     redirect: { name: 'jobDescription' },
     component: () => import('@/components/layout/index.vue'),
     meta: {
-      title: t('aside.hello'),
+      title: t('aside.general.title'),
     },
     children: [
       {
@@ -17,7 +17,7 @@ export const routes: Array<RouteRecordRaw> = [
         name: 'jobDescription',
         component: () => import('@/components/general/jobDescription/index.vue'),
         meta: {
-          title: '工作概况',
+          title: t('aside.general.children.jobDescription.title'),
         },
       },
       {
@@ -25,7 +25,7 @@ export const routes: Array<RouteRecordRaw> = [
         name: 'profileData',
         component: () => import('@/components/general/profileData/index.vue'),
         meta: {
-          title: '数据概况',
+          title: t('aside.general.children.profileData.title'),
         },
       },
     ],

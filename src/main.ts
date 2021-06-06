@@ -13,6 +13,9 @@ import './style/body.scss'
 
 import { i18n, t } from '@/i18n'
 
+// 适配rem
+import '@/lib-flexible/flexible.js'
+
 const app = createApp(App)
 app.config.globalProperties.$t = t // 全局配置 this.$
 // useElementPlus(app)

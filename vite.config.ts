@@ -42,6 +42,8 @@ export default defineConfig({
   server: {
     // 服务端口
     port: 8091,
+    // 0.0.0.0可以使
+    host: '0.0.0.0',
     // 代理
     proxy: {
       '/api': {
