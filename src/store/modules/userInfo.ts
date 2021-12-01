@@ -1,6 +1,4 @@
-const state = {
-  color: 'red',
-}
+const state = {}
 
 const getters = {}
 
